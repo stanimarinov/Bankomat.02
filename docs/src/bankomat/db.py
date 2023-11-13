@@ -3,11 +3,11 @@ import os
 
 class DB:
     def __init__(self):
-        self.accounts_file = "accounts.json"
+        self.accounts_file = ' .data/accounts.json '
     
     def get_all_accounts(self):
         try:
-            with open(self.accounts_file,"r") as f:
+            with open(self.accounts_file,'r') as f:
                 data = json.load(f)
                 return data
         except Exception as err:
@@ -18,6 +18,4 @@ if __name__=="__main__":
     print(f"!!!!!!CWD:{os.getcwd()}")  
 
     db = DB()   
-    db.get_all_accounts()   
-    print(data)  
-
+    db.get_all_accounts() 

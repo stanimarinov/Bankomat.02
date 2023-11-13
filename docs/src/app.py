@@ -1,3 +1,4 @@
+
 from bankomat.db import DB
 
 if __name__=="__main__":
