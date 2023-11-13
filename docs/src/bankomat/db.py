@@ -1,9 +1,10 @@
 import json
 import os
 
+
 class DB:
     def __init__(self):
-        self.accounts_file = ' ../data/accounts.json '
+        self.accounts_file = 'C:\\Users\\stani\\Desktop\\Python Course\\My Project\\Bankomat.2\\data\\accounts.json '
     
     def get_all_accounts(self):
         try:
