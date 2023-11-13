@@ -3,31 +3,32 @@ import os
 
 
 class DB:
-    def __init__(self):
-        self.accounts_file = 'C:\\Users\\stani\\Desktop\\Python Course\\My Project\\Bankomat.2\\data\\accounts.json '
+        def __init__(self):
+                self.accounts_file = 'C:\\Users\\stani\\Desktop\\Python Course\\My Project\\Bankomat.2\\data\\accounts.json '
+        
+        def get_all_accounts(self):
+                try:
+                        with open(self.accounts_file,'r') as f:
+                                data = json.load(f)
+                                return data
+                except Exception as err:
+                        print(f"ERROR: {err}")  
+                        exit()  
     
-    def get_all_accounts(self):
-        try:
-                with open(self.accounts_file,'r') as f:
-                    data = json.load(f)
-                    return data
-        except Exception as err:
-            print(f"ERROR: {err}")  
-            exit()  
-
-    def save_accounts(self,accounts):
-        try:
-                 with open(self.accounts_file,"w") as f:
-                          json.dump(accounts,f)
-                          return data
-        except Exception as err:
-             print(f"ERROR: {err}") 
-             exit()        
+        def save_accounts(self,accounts):
+                try:
+                         with open(self.accounts_file,"w") as f:
+                                  json.dump(accounts,f)
+                                  return data
+                except Exception as err:
+                     print(f"ERROR: {err}") 
+                     exit()        
 
 
 if __name__=="__main__":  
 
-    db = DB()   
-    data = db.get_all_accounts()
-    print(data) 
+        db = DB()   
+        data = db.get_all_accounts()
+        print(data) 
+        
     
